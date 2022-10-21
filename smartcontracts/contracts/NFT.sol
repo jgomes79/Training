@@ -2,12 +2,14 @@
 pragma solidity 0.8.16;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract CoolNFT is ERC721 {
+    using Strings for uint256;
 
     string public uri;
 
-    constructor(string calldata _uri) ERC721("CoolNFT", "NFT") {
+    constructor(string memory _uri) ERC721("CoolNFT", "NFT") {
         uri = _uri;
 
         for (uint i=0; i<20; i++) {
